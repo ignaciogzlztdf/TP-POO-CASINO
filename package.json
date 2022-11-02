@@ -1,0 +1,22 @@
+{
+  "name": "tp-poo-casino",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ignaciogzlztdf/TP-POO-CASINO.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ignaciogzlztdf/TP-POO-CASINO/issues"
+  },
+  "homepage": "https://github.com/ignaciogzlztdf/TP-POO-CASINO#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}

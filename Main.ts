@@ -21,13 +21,13 @@ archivo de texto para fines estadísticos. Cada juego debe
 tener su propio archivo.
 6-Pueden agregar todo lo que consideren necesario para el
 correcto funcionamiento de su programa, siempre que se
-cumplan los requerimientos minimos exigidos
+cumplan los requerimientos mínimos exigidos.
 7-El casino debe ser un proyecto NPM nuevo y se debe
 desarrollar en un branch específico llamado casino-poo.
 8-Debe tener un archivo PDF con una descripción del
-programa y los diagramas de clases correspondientes
-9-Se debe realizar en grupos de MAXIMO 3 integrantes
-(pueden hacerlo de manera individual)
+programa y los diagramas de clases correspondientes.
+9-Se debe realizar en grupos de MÁXIMO 3 integrantes
+(pueden hacerlo de manera individual).
 
 FECHA LÍMITE
 La fecha límite de entrega es el MARTES 8 de noviembre a
