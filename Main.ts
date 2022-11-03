@@ -34,6 +34,10 @@ La fecha límite de entrega es el MARTES 8 de noviembre a
 las 23:59
 
 PASOS
+Persona: Podría almacenar en ella todo lo que el que ejecuta
+el programa va obteniendo. Puede tener las casino chips, el dinero,
+etc
+1 chip = $10
 1-Entrar al casino.
   a.Ejecutar acción de entrada al casino.
   b.Mientras no se vaya del casino, seguirá dentro de él.
@@ -48,3 +52,4 @@ PASOS
   c.Jugar.
   d.Recibir resultado del juego.
 */
+import { Casino } from "./Casino";
