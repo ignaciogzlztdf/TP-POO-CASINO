@@ -32,4 +32,19 @@ programa y los diagramas de clases correspondientes.
 FECHA LÍMITE
 La fecha límite de entrega es el MARTES 8 de noviembre a
 las 23:59
+
+PASOS
+1-Entrar al casino.
+  a.Ejecutar acción de entrada al casino.
+  b.Mientras no se vaya del casino, seguirá dentro de él.
+    Mientras esté dentro, todo lo que ocurre dentro del casino
+    debe funcionar, pero dejará de funcionar al salir.
+  c.Ejecutar acción de salida del casino.
+2-Canjear fichas.
+3-Elegir un juego.
+4-Comenzar a jugar.
+  a.Seleccionar modo de juego.
+  b.Apostar.
+  c.Jugar.
+  d.Recibir resultado del juego.
 */
