@@ -1,14 +1,24 @@
+import { SlotLuckyBoy } from "./SlotLuckyBoy";
 export class Casino {
-  private variable:string;
+  private name:string;
+  private slotLuckyboy:SlotLuckyBoy;
 
-  public constructor(paramVariable:string) {
-    this.variable = paramVariable;
+  // le doy los valores a los juegos con los setters
+  public constructor(paramName:string) {
+    this.name = paramName;
   }
-  public getVariable():string {
-    return this.variable;
+  public getName():string{
+    return this.name;
   }
-  public setVariable(newVariable):void {
-    this.variable = newVariable;
+  public setName(paramName: string):void{
+    this.name = paramName;
   }
-  public 
+  public enter(){
+    console.log("You have entered the casino");
+
+  }
+  public exit(){
+    console.log("You have left the casino");
+
+  }
 }

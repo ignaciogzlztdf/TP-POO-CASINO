@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/ignaciogzlztdf/TP-POO-CASINO#readme",
   "devDependencies": {
+    "@types/node": "^18.11.9",
+    "readline-sync": "^1.4.10",
     "typescript": "^4.8.4"
   }
 }
