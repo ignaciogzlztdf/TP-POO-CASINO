@@ -70,12 +70,18 @@ let txtFile: string = fs.readFileSync(txtFileLocation, 'utf-8');
 import { Casino } from "./Casino";
 import { Person } from "./Person";
 import { SlotLuckyBoy } from "./SlotLuckyBoy";
-
-let rls = require('readline-sync');
+import { SlotLuckyMan } from "./SlotLuckyMan";
 
 // let yourself = new Person("Ignacio","González",11111111,"04-08-2004",100);
+// let rls = require('readline-sync');
 
-// let chosenTopic:string = rls.question("Choose a number to select the game topic:" + "\n" + "[1] Lucky Boy" + "\n" + "[2] Lucky Man" + "\n" + "Your selection is: ");
-// let slotsLuckyBoy = new SlotsLuckyBoy(chosenTopic,1000);
+// let chosenTopic = rls.question("Choose a number to select the game topic:" + "\n" + "[1] Lucky Boy" + "\n" + "[2] Lucky Man" + "\n" + "Your selection is: ");
+// games
+let slotLuckyBoy = new SlotLuckyBoy();
+let slotLuckyMan = new SlotLuckyMan();
 
-
+// console.log(slotLuckyBoy.getTopic());
+// console.log(slotLuckyBoy.getBet());
+// slotLuckyBoy.play();
+// slotLuckyMan.play();
+console.log(slotLuckyBoy.generateNumbers());
