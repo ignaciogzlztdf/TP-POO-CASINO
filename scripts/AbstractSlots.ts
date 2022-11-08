@@ -8,13 +8,6 @@ export abstract class AbstractSlots extends ReadlineSync {
   protected thirdNumber:number;
 
   public constructor(paramTopic:string){
-    /*if (numberTopic === "1"){
-      this.topic = "Lucky Boy";
-    } else if (numberTopic === "2"){
-      this.topic = "Lucky Man";
-    } else {
-      console.log("Error, please enter a valid number.");
-    }*/
     super();
     this.topic = paramTopic;
     this.bet = 0;
@@ -22,27 +15,44 @@ export abstract class AbstractSlots extends ReadlineSync {
   abstract getTopic():string;
   abstract getBet():number;
   abstract play():void;
-  public generateNumbers():boolean{
+  abstract subtractCash():void;
+  abstract payWinnings():void;
+
+  public differentNumbers():void{
+    let arrayOfNumbers:number[] = [];
+    for (let index:number = 0;index < 3;index++){
+      arrayOfNumbers[index] = Math.floor(Math.random()*10);
+    }
+    this.firstNumber = arrayOfNumbers[0];
+    this.secondNumber = arrayOfNumbers[1];
+    this.thirdNumber = arrayOfNumbers[2];
+    if (arrayOfNumbers[0] === arrayOfNumbers[1] && arrayOfNumbers[2] === arrayOfNumbers[1]){
+      this.differentNumbers();
+    }
+  }
+  public generateNumbers():void{
     let probability:number = 15;
     for (let validNumber:number = 9;validNumber >= 0;validNumber--){
         console.log("Prob: "+ probability + " and Number: "+ validNumber);
-        if (Math.floor(Math.random()*100) < probability){
+        if (Math.floor(Math.random()*101) < probability){
           this.firstNumber = validNumber;
-          console.log("[" + this.firstNumber + "] "+"[" + this.firstNumber + "] "+"[" + this.firstNumber + "]");
-          return true;
+          this.secondNumber = this.firstNumber;
+          this.thirdNumber = this.firstNumber;
+          console.log("[" + this.firstNumber + "] "+"[" + this.secondNumber + "] "+"[" + this.thirdNumber + "]");
+          return;
         } else {
           probability = probability - 1.5;
         }
     }
-    return false;
+    this.differentNumbers();
+    console.log("[" + this.firstNumber + "] "+"[" + this.secondNumber + "] "+"[" + this.thirdNumber + "]");
+    return;
   }
-  protected randomNumbers() {
-    if (Math.floor((Math.random()*100) + 1) < 10){
-      this.firstNumber = 9;
-      this.secondNumber = this.firstNumber;
-      this.thirdNumber = this.firstNumber;
+  public checkNumbers():boolean{
+    if (this.firstNumber === this.secondNumber && this.secondNumber === this.thirdNumber){
+      return true;
     } else {
-
+      return false;
     }
   }
 }

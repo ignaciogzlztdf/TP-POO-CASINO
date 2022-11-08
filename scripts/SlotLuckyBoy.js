@@ -28,16 +28,20 @@ var SlotLuckyBoy = /** @class */ (function (_super) {
     SlotLuckyBoy.prototype.getBet = function () {
         return this.bet;
     };
+    SlotLuckyBoy.prototype.payWinnings = function () {
+    };
+    SlotLuckyBoy.prototype.subtractCash = function () {
+    };
     SlotLuckyBoy.prototype.play = function () {
         var bet = Number(this.rls.question("Enter your bet: "));
-        if (bet < 0 || bet > 10) {
-            console.log("\n" + "This game topic only allows to bet up to 15 usd. Try again or choose another game topic.");
+        if (bet <= 0 || bet > 10) {
+            console.log("\n" + "This game topic only allows you to bet up to 10 usd. Try again or choose another game topic.");
             return this.play();
         }
         else {
             this.bet = bet;
         }
-        console.log(this.getBet());
+        this.generateNumbers();
     };
     return SlotLuckyBoy;
 }(AbstractSlots_1.AbstractSlots));

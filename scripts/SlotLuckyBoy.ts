@@ -10,15 +10,20 @@ export class SlotLuckyBoy extends AbstractSlots {
   public getBet():number{
     return this.bet;
   }
+  public payWinnings(): void {
+    
+  }
+  public subtractCash(): void {
+    
+  }
   public play():void{
     let bet:number = Number(this.rls.question("Enter your bet: "));
-    if (bet < 0 || bet > 10){
-      console.log("\n"+"This game topic only allows to bet up to 15 usd. Try again or choose another game topic.")
+    if (bet <= 0 || bet > 10){
+      console.log("\n"+"This game topic only allows you to bet up to 10 usd. Try again or choose another game topic.")
       return this.play();
     } else {
       this.bet = bet;
     }
-    console.log(this.getBet());
-    
+    this.generateNumbers();
   }
 }
