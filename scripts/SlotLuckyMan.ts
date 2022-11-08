@@ -10,6 +10,12 @@ export class SlotLuckyMan extends AbstractSlots {
   public getBet():number{
     return this.bet;
   }
+  public payWinnings(): void {
+    
+  }
+  public subtractCash(): void {
+    
+  }
   public play():void{
     let bet:number = Number(this.rls.question("Enter your bet: "));
     if (bet < 100 || bet > 1000){

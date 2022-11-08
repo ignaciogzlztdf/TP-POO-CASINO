@@ -28,6 +28,10 @@ var SlotLuckyMan = /** @class */ (function (_super) {
     SlotLuckyMan.prototype.getBet = function () {
         return this.bet;
     };
+    SlotLuckyMan.prototype.payWinnings = function () {
+    };
+    SlotLuckyMan.prototype.subtractCash = function () {
+    };
     SlotLuckyMan.prototype.play = function () {
         var bet = Number(this.rls.question("Enter your bet: "));
         if (bet < 100 || bet > 1000) {

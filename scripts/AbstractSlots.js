@@ -20,41 +20,48 @@ var ReadlineSync_1 = require("./ReadlineSync");
 var AbstractSlots = /** @class */ (function (_super) {
     __extends(AbstractSlots, _super);
     function AbstractSlots(paramTopic) {
-        var _this = 
-        /*if (numberTopic === "1"){
-          this.topic = "Lucky Boy";
-        } else if (numberTopic === "2"){
-          this.topic = "Lucky Man";
-        } else {
-          console.log("Error, please enter a valid number.");
-        }*/
-        _super.call(this) || this;
+        var _this = _super.call(this) || this;
         _this.topic = paramTopic;
         _this.bet = 0;
         return _this;
     }
+    AbstractSlots.prototype.differentNumbers = function () {
+        var arrayOfNumbers = [];
+        for (var index = 0; index < 3; index++) {
+            arrayOfNumbers[index] = Math.floor(Math.random() * 10);
+        }
+        this.firstNumber = arrayOfNumbers[0];
+        this.secondNumber = arrayOfNumbers[1];
+        this.thirdNumber = arrayOfNumbers[2];
+        if (arrayOfNumbers[0] === arrayOfNumbers[1] && arrayOfNumbers[2] === arrayOfNumbers[1]) {
+            this.differentNumbers();
+        }
+    };
     AbstractSlots.prototype.generateNumbers = function () {
         var probability = 15;
         for (var validNumber = 9; validNumber >= 0; validNumber--) {
             console.log("Prob: " + probability + " and Number: " + validNumber);
-            if (Math.floor(Math.random() * 100) < probability) {
+            if (Math.floor(Math.random() * 101) < probability) {
                 this.firstNumber = validNumber;
-                console.log("[" + this.firstNumber + "] " + "[" + this.firstNumber + "] " + "[" + this.firstNumber + "]");
-                return true;
+                this.secondNumber = this.firstNumber;
+                this.thirdNumber = this.firstNumber;
+                console.log("[" + this.firstNumber + "] " + "[" + this.secondNumber + "] " + "[" + this.thirdNumber + "]");
+                return;
             }
             else {
                 probability = probability - 1.5;
             }
         }
-        return false;
+        this.differentNumbers();
+        console.log("[" + this.firstNumber + "] " + "[" + this.secondNumber + "] " + "[" + this.thirdNumber + "]");
+        return;
     };
-    AbstractSlots.prototype.randomNumbers = function () {
-        if (Math.floor((Math.random() * 100) + 1) < 10) {
-            this.firstNumber = 9;
-            this.secondNumber = this.firstNumber;
-            this.thirdNumber = this.firstNumber;
+    AbstractSlots.prototype.checkNumbers = function () {
+        if (this.firstNumber === this.secondNumber && this.secondNumber === this.thirdNumber) {
+            return true;
         }
         else {
+            return false;
         }
     };
     return AbstractSlots;

@@ -1,3 +1,5 @@
+import { Person } from "./Person";
+
 export class Cashier {
-  private user;
+  private user:Person;
 }

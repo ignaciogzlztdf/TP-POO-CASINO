@@ -77,11 +77,14 @@ import { SlotLuckyMan } from "./SlotLuckyMan";
 
 // let chosenTopic = rls.question("Choose a number to select the game topic:" + "\n" + "[1] Lucky Boy" + "\n" + "[2] Lucky Man" + "\n" + "Your selection is: ");
 // games
+let casinoElSanjuanino = new Casino("El Sanjuanino");
 let slotLuckyBoy = new SlotLuckyBoy();
 let slotLuckyMan = new SlotLuckyMan();
 
+casinoElSanjuanino.enter();
+// slotLuckyBoy.play();
+// console.log(slotLuckyBoy.checkNumbers());
+
 // console.log(slotLuckyBoy.getTopic());
 // console.log(slotLuckyBoy.getBet());
-// slotLuckyBoy.play();
 // slotLuckyMan.play();
-console.log(slotLuckyBoy.generateNumbers());
