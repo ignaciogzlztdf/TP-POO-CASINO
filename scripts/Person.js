@@ -2,12 +2,12 @@
 exports.__esModule = true;
 exports.Person = void 0;
 var Person = /** @class */ (function () {
-    function Person(paramName, paramLastName, paramDni, paramDateOfBirth, paramCash) {
+    function Person(paramName, paramLastName, paramDni, paramDateOfBirth) {
         this.name = paramName;
         this.lastName = paramLastName;
         this.dni = paramDni;
         this.dateOfBirth = new Date(paramDateOfBirth);
-        this.cash = paramCash;
+        this.cash = 0;
     }
     Person.prototype.getName = function () {
         return this.name;

@@ -19,10 +19,12 @@ exports.Casino = void 0;
 var ReadlineSync_1 = require("./ReadlineSync");
 var Casino = /** @class */ (function (_super) {
     __extends(Casino, _super);
-    // le doy los valores a los juegos con los setters
-    function Casino(paramName) {
+    function Casino(paramName, paramPerson, paramSlotLuckyBoy, paramSlotLuckyMan) {
         var _this = _super.call(this) || this;
         _this.name = paramName;
+        _this.someone = paramPerson;
+        _this.slotLuckyBoy = paramSlotLuckyBoy;
+        _this.slotLuckyMan = paramSlotLuckyMan;
         return _this;
     }
     Casino.prototype.getName = function () {
@@ -50,10 +52,42 @@ var Casino = /** @class */ (function (_super) {
         }
     };
     Casino.prototype.exit = function () {
-        console.log("\n" + "It has been a pleasure having you here, we hope you come back soon." + "\n" + "You have left the casino.");
+        console.log("\n" + "It has been a pleasure having you here, we hope you come back soon." + "\n" + "You have left the casino." + "\n");
     };
     Casino.prototype.goToTheCashier = function () {
         console.log("\n" + "You're in the cashier.");
+        var validResponse = false;
+        while (validResponse === false) {
+            var input = Number(this.rls.question("What do you want?" + "\n" + "[1] Buy casino chips" + "\n" + "[2] Exchange casino chips for cash" + "\n" + "Your selection: "));
+            if (input === 1) {
+                this.slotLuckyBoy.play();
+                validResponse = true;
+            }
+            else if (input === 2) {
+                this.slotLuckyMan.play();
+                validResponse = true;
+            }
+            else {
+                console.log("Please enter a valid number." + "\n");
+            }
+        }
+    };
+    Casino.prototype.chooseAndPlay = function () {
+        var validResponse = false;
+        while (validResponse === false) {
+            var input = Number(this.rls.question("Make your choice:" + "\n" + "[1] Slots Lucky Boy" + "\n" + "[2] Slots Lucky Man" + "\n" + "Your selection: "));
+            if (input === 1) {
+                this.slotLuckyBoy.play();
+                validResponse = true;
+            }
+            else if (input === 2) {
+                this.slotLuckyMan.play();
+                validResponse = true;
+            }
+            else {
+                console.log("Please enter a valid number." + "\n");
+            }
+        }
     };
     return Casino;
 }(ReadlineSync_1.ReadlineSync));

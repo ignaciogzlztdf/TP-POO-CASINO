@@ -24,8 +24,6 @@ export class SlotLuckyMan extends AbstractSlots {
     } else {
       this.bet = bet;
     }
-    console.log(this.getBet());
-    // if (Math.floor((Math.random()*100) + 1) < 4){
-    // }
+    this.generateNumbers();
   }
 }
