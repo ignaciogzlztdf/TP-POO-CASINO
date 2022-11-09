@@ -60,7 +60,7 @@ var Casino = /** @class */ (function (_super) {
         while (validResponse === false) {
             var input = Number(this.rls.question("What do you want?" + "\n" + "[1] Buy casino chips" + "\n" + "[2] Exchange casino chips for cash" + "\n" + "Your selection: "));
             if (input === 1) {
-                this.slotLuckyBoy.play();
+                this.cashier.buyCasinoChips();
                 validResponse = true;
             }
             else if (input === 2) {

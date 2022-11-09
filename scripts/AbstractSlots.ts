@@ -2,7 +2,7 @@ import { ReadlineSync } from "./ReadlineSync";
 
 export abstract class AbstractSlots extends ReadlineSync {
   protected topic:string;
-  // protected bet:number;
+  protected bet:number;
   protected firstNumber:number;
   protected secondNumber:number;
   protected thirdNumber:number;
@@ -10,7 +10,7 @@ export abstract class AbstractSlots extends ReadlineSync {
   public constructor(paramTopic:string){
     super();
     this.topic = paramTopic;
-    // this.bet = 0;
+    this.bet = 0;
   }
   abstract getTopic():string;
   abstract getBet():number;
