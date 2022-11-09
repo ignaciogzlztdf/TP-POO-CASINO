@@ -4,13 +4,14 @@ export class Person {
     private dni:number;
     private dateOfBirth:Date;
     private cash:number;
+    private casinoChips:number;
 
-    public constructor(paramName:string,paramLastName:string,paramDni:number,paramDateOfBirth:string,paramCash:number) {
+    public constructor(paramName:string,paramLastName:string,paramDni:number,paramDateOfBirth:string) {
         this.name = paramName;
         this.lastName = paramLastName;
         this.dni = paramDni;
         this.dateOfBirth = new Date (paramDateOfBirth);
-        this.cash = paramCash;
+        this.cash = 0;
     }
     public getName():string{
         return this.name;
