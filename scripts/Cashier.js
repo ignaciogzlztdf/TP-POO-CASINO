@@ -27,6 +27,9 @@ var Cashier = /** @class */ (function (_super) {
     Cashier.prototype.buyCasinoChips = function () {
         var cash = Number(this.rls.question("Enter your total cash: "));
     };
+    Cashier.prototype.exchangeChipsForCash = function () {
+        var cash = Number(this.rls.question("Enter your total cash: "));
+    };
     return Cashier;
 }(ReadlineSync_1.ReadlineSync));
 exports.Cashier = Cashier;
