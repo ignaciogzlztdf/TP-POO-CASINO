@@ -28,12 +28,15 @@ var SlotLuckyMan = /** @class */ (function (_super) {
     SlotLuckyMan.prototype.getBet = function () {
         return this.bet;
     };
-    SlotLuckyMan.prototype.payWinnings = function () {
+    SlotLuckyMan.prototype.userHaveLost = function () {
+        console.log("\n" + "You have lost.");
     };
-    SlotLuckyMan.prototype.subtractCash = function () {
+    SlotLuckyMan.prototype.userHaveWon = function () {
+        console.log("\n" + "You have won.");
     };
     SlotLuckyMan.prototype.play = function () {
-        var bet = Number(this.rls.question("Enter your bet: "));
+        console.log("\n" + "---> Slots - Lucky Man <---");
+        var bet = Number(this.rls.question("\n" + "Enter your bet: "));
         if (bet < 100 || bet > 1000) {
             console.log("\n" + "This game topic only allows to bet from 100 to 1000 usd. Try again or choose another game topic.");
             return this.play();
@@ -42,6 +45,12 @@ var SlotLuckyMan = /** @class */ (function (_super) {
             this.bet = bet;
         }
         this.generateNumbers();
+        if (this.checkNumbers()) {
+            this.userHaveWon();
+        }
+        else {
+            this.userHaveLost();
+        }
     };
     return SlotLuckyMan;
 }(AbstractSlots_1.AbstractSlots));

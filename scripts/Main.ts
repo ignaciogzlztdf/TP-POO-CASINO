@@ -47,43 +47,38 @@ Los logos presentaciones y bienvenidas van en main
 
 ARCHIVOS TXT
 let txtFile: string = fs.readFileSync(txtFileLocation, 'utf-8');
-        //separa ese txt en elementos  y crea un arreglo de strings
-1-Entrar al casino.
+  //separa ese txt en elementos  y crea un arreglo de strings
+1-Entrada al casino.
   a.Ejecutar acción de entrada al casino.
   b.Mientras no se vaya del casino, seguirá dentro de él.
     Mientras esté dentro, todo lo que ocurre dentro del casino
     debe funcionar, pero dejará de funcionar al salir.
-  c.Una vez que entró se debe preguntar si se dirige a los
-    juegos o al cashier.
-  d.Ejecutar acción de salida del casino.
-2-Canjear fichas.
-  a.Las fichas del casino se llaman chips
-  b.Acquire Chips (comprar fichas)
-  c.Trade in Chips (canjear fichas por dinero)
-3-Elegir un juego.
-4-Comenzar a jugar.
-  a.Seleccionar modo de juego.
+2-Selección del juego.
+  a.Mientras esté dentro del casino se debe preguntar qué juego quiere jugar
+    o si desea salir.
+3-Comenzar a jugar.
+  a.Se ejecuta el juego elegido.
   b.Apostar.
   c.Jugar.
   d.Recibir resultado del juego.
+4-Hacer los diagramas
+5-Revisar lo que tengo comentado en todos los archivos
+6-Comentar el código
 */
-import { Cashier } from "./Cashier";
 import { Casino } from "./Casino";
 import { Person } from "./Person";
 import { SlotLuckyBoy } from "./SlotLuckyBoy";
 import { SlotLuckyMan } from "./SlotLuckyMan";
 
-// instantiated classes
+/* instantiated classes */
 
 // person
 let myself = new Person("Ignacio","González",45877620,"04-08-2004");
 // games
 let slotLuckyBoy = new SlotLuckyBoy();
 let slotLuckyMan = new SlotLuckyMan();
-// cashier
-let cashier = new Cashier(myself);
 // casino
-let casinoElSanjuanino = new Casino("El Sanjuanino",myself,slotLuckyBoy,slotLuckyMan);
+let casinoElSanjuanino = new Casino("El Sanjuanino"/*,myself*/,slotLuckyBoy,slotLuckyMan);
 
 casinoElSanjuanino.enter();
-casinoElSanjuanino.chooseAndPlay();
+// casinoElSanjuanino.chooseAndPlay();
