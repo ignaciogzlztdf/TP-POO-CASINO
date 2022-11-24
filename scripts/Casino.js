@@ -17,12 +17,14 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 exports.Casino = void 0;
 var ReadlineSync_1 = require("./ReadlineSync");
+// import { Person } from "./Person";
 var Casino = /** @class */ (function (_super) {
     __extends(Casino, _super);
-    function Casino(paramName, paramPerson, paramSlotLuckyBoy, paramSlotLuckyMan) {
+    // private someone:Person;
+    function Casino(paramName /*,paramPerson:Person*/, paramSlotLuckyBoy, paramSlotLuckyMan) {
         var _this = _super.call(this) || this;
         _this.name = paramName;
-        _this.someone = paramPerson;
+        // this.someone = paramPerson;
         _this.slotLuckyBoy = paramSlotLuckyBoy;
         _this.slotLuckyMan = paramSlotLuckyMan;
         return _this;
@@ -34,15 +36,19 @@ var Casino = /** @class */ (function (_super) {
         this.name = paramName;
     };
     Casino.prototype.enter = function () {
-        console.log("You have entered the casino." + "\n" + "¡Welcome to El Sanjuanino casino!" + "\n");
+        console.log("* You have entered the casino *" + "\n" + "¡Welcome to El Sanjuanino casino!" + "\n");
         var validResponse = false;
         while (validResponse === false) {
-            var input = Number(this.rls.question("What do you wanna do?" + "\n" + "[1] Go to the cashier" + "\n" + "[2] Exit the casino" + "\n" + "Your selection: "));
+            var input = Number(this.rls.question("Make your choice" + "\n" + "<> Games <>" + "\n" + "[1] Slots - Lucky Boy" + "\n" + "[2] Slots - Lucky Man" + "\n" + "<> Exit <>" + "\n" + "[3] Leave the casino" + "\n" + "\n" + "Your selection is: "));
             if (input === 1) {
-                this.goToTheCashier();
+                this.slotLuckyBoy.play();
                 validResponse = true;
             }
             else if (input === 2) {
+                this.slotLuckyMan.play();
+                validResponse = true;
+            }
+            else if (input === 3) {
                 this.exit();
                 validResponse = true;
             }
@@ -52,42 +58,7 @@ var Casino = /** @class */ (function (_super) {
         }
     };
     Casino.prototype.exit = function () {
-        console.log("\n" + "It has been a pleasure having you here, we hope you come back soon." + "\n" + "You have left the casino." + "\n");
-    };
-    Casino.prototype.goToTheCashier = function () {
-        console.log("\n" + "You're in the cashier.");
-        var validResponse = false;
-        while (validResponse === false) {
-            var input = Number(this.rls.question("What do you want?" + "\n" + "[1] Buy casino chips" + "\n" + "[2] Exchange casino chips for cash" + "\n" + "Your selection: "));
-            if (input === 1) {
-                this.cashier.buyCasinoChips();
-                validResponse = true;
-            }
-            else if (input === 2) {
-                this.slotLuckyMan.play();
-                validResponse = true;
-            }
-            else {
-                console.log("Please enter a valid number." + "\n");
-            }
-        }
-    };
-    Casino.prototype.chooseAndPlay = function () {
-        var validResponse = false;
-        while (validResponse === false) {
-            var input = Number(this.rls.question("Make your choice:" + "\n" + "[1] Slots Lucky Boy" + "\n" + "[2] Slots Lucky Man" + "\n" + "Your selection: "));
-            if (input === 1) {
-                this.slotLuckyBoy.play();
-                validResponse = true;
-            }
-            else if (input === 2) {
-                this.slotLuckyMan.play();
-                validResponse = true;
-            }
-            else {
-                console.log("Please enter a valid number." + "\n");
-            }
-        }
+        console.log("\n" + "It has been a pleasure having you here, we hope you come back soon." + "\n" + "* You have left the casino *" + "\n");
     };
     return Casino;
 }(ReadlineSync_1.ReadlineSync));

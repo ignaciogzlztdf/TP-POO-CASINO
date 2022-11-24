@@ -15,8 +15,8 @@ export abstract class AbstractSlots extends ReadlineSync {
   abstract getTopic():string;
   abstract getBet():number;
   abstract play():void;
-  abstract subtractCash():void;
-  abstract payWinnings():void;
+  abstract userHaveLost():void;
+  abstract userHaveWon():void;
 
   public differentNumbers():void{
     let arrayOfNumbers:number[] = [];
@@ -33,19 +33,19 @@ export abstract class AbstractSlots extends ReadlineSync {
   public generateNumbers():void{
     let probability:number = 15;
     for (let validNumber:number = 9;validNumber >= 0;validNumber--){
-        console.log("Prob: "+ probability + " and Number: "+ validNumber);
+        // console.log("Prob: "+ probability + " and Number: "+ validNumber);
         if (Math.floor(Math.random()*101) < probability){
           this.firstNumber = validNumber;
           this.secondNumber = this.firstNumber;
           this.thirdNumber = this.firstNumber;
-          console.log("[" + this.firstNumber + "] "+"[" + this.secondNumber + "] "+"[" + this.thirdNumber + "]");
+          console.log("\n"+"The result is: "+"[" + this.firstNumber + "] "+"[" + this.secondNumber + "] "+"[" + this.thirdNumber + "]");
           return;
         } else {
           probability = probability - 1.5;
         }
     }
     this.differentNumbers();
-    console.log("[" + this.firstNumber + "] "+"[" + this.secondNumber + "] "+"[" + this.thirdNumber + "]");
+    console.log("\n"+"The result is: "+"[" + this.firstNumber + "] "+"[" + this.secondNumber + "] "+"[" + this.thirdNumber + "]");
     return;
   }
   public checkNumbers():boolean{

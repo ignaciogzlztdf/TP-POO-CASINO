@@ -1,19 +1,17 @@
 import { SlotLuckyBoy } from "./SlotLuckyBoy";
-import { Cashier } from "./Cashier"
 import { ReadlineSync } from "./ReadlineSync";
 import { SlotLuckyMan } from "./SlotLuckyMan";
-import { Person } from "./Person";
+// import { Person } from "./Person";
 export class Casino extends ReadlineSync{
   private name:string;
   private slotLuckyBoy:SlotLuckyBoy;
   private slotLuckyMan:SlotLuckyMan;
-  private cashier:Cashier;
-  private someone:Person;
+  // private someone:Person;
 
-  public constructor(paramName:string,paramPerson:Person,paramSlotLuckyBoy:SlotLuckyBoy,paramSlotLuckyMan:SlotLuckyMan) {
+  public constructor(paramName:string/*,paramPerson:Person*/,paramSlotLuckyBoy:SlotLuckyBoy,paramSlotLuckyMan:SlotLuckyMan) {
     super();
     this.name = paramName;
-    this.someone = paramPerson;
+    // this.someone = paramPerson;
     this.slotLuckyBoy = paramSlotLuckyBoy;
     this.slotLuckyMan = paramSlotLuckyMan;
   }
@@ -24,14 +22,17 @@ export class Casino extends ReadlineSync{
     this.name = paramName;
   }
   public enter():void{
-    console.log("You have entered the casino."+"\n"+"¡Welcome to El Sanjuanino casino!"+"\n");
+    console.log("* You have entered the casino *"+"\n"+"¡Welcome to El Sanjuanino casino!"+"\n");
     let validResponse:boolean = false;
     while (validResponse === false){
-      let input:number = Number(this.rls.question("What do you wanna do?"+"\n"+"[1] Go to the cashier"+"\n"+"[2] Exit the casino"+"\n"+"Your selection: "));
+      let input:number = Number(this.rls.question("Make your choice"+"\n"+"<> Games <>"+"\n"+"[1] Slots - Lucky Boy"+"\n"+"[2] Slots - Lucky Man"+"\n"+"<> Exit <>"+"\n"+"[3] Leave the casino"+"\n"+"\n"+"Your selection is: "));
       if (input === 1){
-        this.goToTheCashier();
+        this.slotLuckyBoy.play();
         validResponse = true;
       } else if (input === 2){
+        this.slotLuckyMan.play();
+        validResponse = true;
+      } else if (input === 3){
         this.exit();
         validResponse = true;
       } else {
@@ -40,37 +41,21 @@ export class Casino extends ReadlineSync{
     }
   }
   public exit():void{
-    console.log("\n"+"It has been a pleasure having you here, we hope you come back soon."+"\n"+"You have left the casino."+"\n");
+    console.log("\n"+"It has been a pleasure having you here, we hope you come back soon."+"\n"+"* You have left the casino *"+"\n");
   }
-  public goToTheCashier(){
-    console.log("\n"+"You're in the cashier.");
-    let validResponse:boolean = false;
-    while (validResponse === false){
-    let input:number = Number(this.rls.question("What do you want?"+"\n"+"[1] Buy casino chips"+"\n"+"[2] Exchange casino chips for cash"+"\n"+"Your selection: "));
-      if (input === 1){
-        this.cashier.buyCasinoChips();
-        validResponse = true;
-      } else if (input === 2){
-        this.slotLuckyMan.play();
-        validResponse = true;
-      } else {
-        console.log("Please enter a valid number."+"\n");
-      }
-    }
-  }
-  public chooseAndPlay(){
-    let validResponse:boolean = false;
-    while (validResponse === false){
-    let input:number = Number(this.rls.question("Make your choice:"+"\n"+"[1] Slots Lucky Boy"+"\n"+"[2] Slots Lucky Man"+"\n"+"Your selection: "));
-      if (input === 1){
-        this.slotLuckyBoy.play();
-        validResponse = true;
-      } else if (input === 2){
-        this.slotLuckyMan.play();
-        validResponse = true;
-      } else {
-        console.log("Please enter a valid number."+"\n");
-      }
-    }
-  }
+  // public chooseAndPlay(){
+  //   let validResponse:boolean = false;
+  //   while (validResponse === false){
+  //   let input:number = Number(this.rls.question("Make your choice:"+"\n"+"[1] Slots Lucky Boy"+"\n"+"[2] Slots Lucky Man"+"\n"+"Your selection: "));
+  //     if (input === 1){
+  //       this.slotLuckyBoy.play();
+  //       validResponse = true;
+  //     } else if (input === 2){
+  //       this.slotLuckyMan.play();
+  //       validResponse = true;
+  //     } else {
+  //       console.log("Please enter a valid number."+"\n");
+  //     }
+  //   }
+  // }
 }

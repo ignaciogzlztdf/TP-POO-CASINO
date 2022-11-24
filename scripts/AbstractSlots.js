@@ -40,12 +40,12 @@ var AbstractSlots = /** @class */ (function (_super) {
     AbstractSlots.prototype.generateNumbers = function () {
         var probability = 15;
         for (var validNumber = 9; validNumber >= 0; validNumber--) {
-            console.log("Prob: " + probability + " and Number: " + validNumber);
+            // console.log("Prob: "+ probability + " and Number: "+ validNumber);
             if (Math.floor(Math.random() * 101) < probability) {
                 this.firstNumber = validNumber;
                 this.secondNumber = this.firstNumber;
                 this.thirdNumber = this.firstNumber;
-                console.log("[" + this.firstNumber + "] " + "[" + this.secondNumber + "] " + "[" + this.thirdNumber + "]");
+                console.log("\n" + "The result is: " + "[" + this.firstNumber + "] " + "[" + this.secondNumber + "] " + "[" + this.thirdNumber + "]");
                 return;
             }
             else {
@@ -53,7 +53,7 @@ var AbstractSlots = /** @class */ (function (_super) {
             }
         }
         this.differentNumbers();
-        console.log("[" + this.firstNumber + "] " + "[" + this.secondNumber + "] " + "[" + this.thirdNumber + "]");
+        console.log("\n" + "The result is: " + "[" + this.firstNumber + "] " + "[" + this.secondNumber + "] " + "[" + this.thirdNumber + "]");
         return;
     };
     AbstractSlots.prototype.checkNumbers = function () {
