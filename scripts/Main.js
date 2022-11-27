@@ -66,18 +66,24 @@ let txtFile: string = fs.readFileSync(txtFileLocation, 'utf-8');
 4-Hacer los diagramas
 5-Revisar lo que tengo comentado en todos los archivos
 6-Comentar el código
+
+Recomendación
+Cuando se elige el juego, se crea la instancia del juego
+y luego se elimina
 */
 var Casino_1 = require("./Casino");
 // import { Person } from "./Person";
 var SlotLuckyBoy_1 = require("./SlotLuckyBoy");
 var SlotLuckyMan_1 = require("./SlotLuckyMan");
+var Blackjack_1 = require("./Blackjack");
 /* instantiated classes */
 // person
 // let myself = new Person("Ignacio","González",45877620,"04-08-2004");
 // games
-var slotLuckyBoy = new SlotLuckyBoy_1.SlotLuckyBoy();
-var slotLuckyMan = new SlotLuckyMan_1.SlotLuckyMan();
+var gameSlotLuckyBoy = new SlotLuckyBoy_1.SlotLuckyBoy();
+var gameSlotLuckyMan = new SlotLuckyMan_1.SlotLuckyMan();
+var gameBlackjack = new Blackjack_1.Blackjack();
 // casino
-var casinoElSanjuanino = new Casino_1.Casino("El Sanjuanino" /*,myself*/, slotLuckyBoy, slotLuckyMan);
-casinoElSanjuanino.enter();
-// casinoElSanjuanino.chooseAndPlay();
+var casinoElSanjuanino = new Casino_1.Casino("El Sanjuanino" /*,myself*/, gameSlotLuckyBoy, gameSlotLuckyMan);
+// casinoElSanjuanino.enter();
+gameBlackjack.play();
