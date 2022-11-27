@@ -25,6 +25,26 @@ var AbstractSlots = /** @class */ (function (_super) {
         _this.bet = 0;
         return _this;
     }
+    AbstractSlots.prototype.getBet = function () {
+        return this.bet;
+    };
+    AbstractSlots.prototype.setBet = function (paramBet) {
+        this.bet = paramBet;
+    };
+    AbstractSlots.prototype.getTopic = function () {
+        return this.topic;
+    };
+    AbstractSlots.prototype.setTopic = function (paramTopic) {
+        this.topic = paramTopic;
+    };
+    AbstractSlots.prototype.checkNumbers = function () {
+        if (this.firstNumber === this.secondNumber && this.secondNumber === this.thirdNumber) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
     AbstractSlots.prototype.differentNumbers = function () {
         var arrayOfNumbers = [];
         for (var index = 0; index < 3; index++) {
@@ -56,13 +76,11 @@ var AbstractSlots = /** @class */ (function (_super) {
         console.log("\n" + "The result is: " + "[" + this.firstNumber + "] " + "[" + this.secondNumber + "] " + "[" + this.thirdNumber + "]");
         return;
     };
-    AbstractSlots.prototype.checkNumbers = function () {
-        if (this.firstNumber === this.secondNumber && this.secondNumber === this.thirdNumber) {
-            return true;
-        }
-        else {
-            return false;
-        }
+    AbstractSlots.prototype.userHaveLost = function () {
+        console.log("\n" + "You have lost.");
+    };
+    AbstractSlots.prototype.userHaveWon = function () {
+        console.log("\n" + "¡You have won!");
     };
     return AbstractSlots;
 }(ReadlineSync_1.ReadlineSync));
