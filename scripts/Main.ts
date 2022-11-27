@@ -87,4 +87,4 @@ let gameBlackjack = new Blackjack();
 let casinoElSanjuanino = new Casino("El Sanjuanino"/*,myself*/,gameSlotLuckyBoy,gameSlotLuckyMan);
 
 // casinoElSanjuanino.enter();
-gameBlackjack.generateCards();
+gameBlackjack.play();
