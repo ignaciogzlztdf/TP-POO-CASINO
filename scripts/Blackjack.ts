@@ -32,8 +32,12 @@ export class Blackjack {
     }
     console.log(this.cards);
   }
+  private shuffleCards(){
+    
+  }
   public play(){
     // the cards are generated
     this.generateCards();
+    this.shuffleCards();
   }
 }
