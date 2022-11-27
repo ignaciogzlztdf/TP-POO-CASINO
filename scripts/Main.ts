@@ -64,21 +64,27 @@ let txtFile: string = fs.readFileSync(txtFileLocation, 'utf-8');
 4-Hacer los diagramas
 5-Revisar lo que tengo comentado en todos los archivos
 6-Comentar el código
+
+Recomendación
+Cuando se elige el juego, se crea la instancia del juego
+y luego se elimina
 */
 import { Casino } from "./Casino";
-import { Person } from "./Person";
+// import { Person } from "./Person";
 import { SlotLuckyBoy } from "./SlotLuckyBoy";
 import { SlotLuckyMan } from "./SlotLuckyMan";
+import { Blackjack } from "./Blackjack"
 
 /* instantiated classes */
 
 // person
-let myself = new Person("Ignacio","González",45877620,"04-08-2004");
+// let myself = new Person("Ignacio","González",45877620,"04-08-2004");
 // games
-let slotLuckyBoy = new SlotLuckyBoy();
-let slotLuckyMan = new SlotLuckyMan();
+let gameSlotLuckyBoy = new SlotLuckyBoy();
+let gameSlotLuckyMan = new SlotLuckyMan();
+let gameBlackjack = new Blackjack();
 // casino
-let casinoElSanjuanino = new Casino("El Sanjuanino"/*,myself*/,slotLuckyBoy,slotLuckyMan);
+let casinoElSanjuanino = new Casino("El Sanjuanino"/*,myself*/,gameSlotLuckyBoy,gameSlotLuckyMan);
 
-casinoElSanjuanino.enter();
-// casinoElSanjuanino.chooseAndPlay();
+// casinoElSanjuanino.enter();
+gameBlackjack.generateCards();

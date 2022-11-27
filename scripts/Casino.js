@@ -41,10 +41,12 @@ var Casino = /** @class */ (function (_super) {
         while (validResponse === false) {
             var input = Number(this.rls.question("Make your choice" + "\n" + "<> Games <>" + "\n" + "[1] Slots - Lucky Boy" + "\n" + "[2] Slots - Lucky Man" + "\n" + "<> Exit <>" + "\n" + "[3] Leave the casino" + "\n" + "\n" + "Your selection is: "));
             if (input === 1) {
+                console.log("\n" + "---> Slots - Lucky Boy <---");
                 this.slotLuckyBoy.play();
                 validResponse = true;
             }
             else if (input === 2) {
+                console.log("\n" + "---> Slots - Lucky Man <---");
                 this.slotLuckyMan.play();
                 validResponse = true;
             }

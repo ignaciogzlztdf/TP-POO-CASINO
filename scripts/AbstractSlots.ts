@@ -12,12 +12,28 @@ export abstract class AbstractSlots extends ReadlineSync {
     this.topic = paramTopic;
     this.bet = 0;
   }
-  abstract getTopic():string;
-  abstract getBet():number;
-  abstract play():void;
-  abstract userHaveLost():void;
-  abstract userHaveWon():void;
 
+  abstract play():void;
+
+  public getBet():number{
+    return this.bet;
+  }
+  public setBet(paramBet:number):void{
+    this.bet = paramBet;
+  }
+  public getTopic():string{
+    return this.topic;
+  }
+  public setTopic(paramTopic:string):void{
+    this.topic = paramTopic;
+  }
+  public checkNumbers():boolean{
+    if (this.firstNumber === this.secondNumber && this.secondNumber === this.thirdNumber){
+      return true;
+    } else {
+      return false;
+    }
+  }
   public differentNumbers():void{
     let arrayOfNumbers:number[] = [];
     for (let index:number = 0;index < 3;index++){
@@ -48,11 +64,10 @@ export abstract class AbstractSlots extends ReadlineSync {
     console.log("\n"+"The result is: "+"[" + this.firstNumber + "] "+"[" + this.secondNumber + "] "+"[" + this.thirdNumber + "]");
     return;
   }
-  public checkNumbers():boolean{
-    if (this.firstNumber === this.secondNumber && this.secondNumber === this.thirdNumber){
-      return true;
-    } else {
-      return false;
-    }
+  public userHaveLost(): void {
+    console.log("\n"+"You have lost.");
+  }
+  public userHaveWon(): void {
+    console.log("\n"+"¡You have won!");
   }
 }

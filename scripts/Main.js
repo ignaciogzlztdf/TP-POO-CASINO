@@ -68,12 +68,12 @@ let txtFile: string = fs.readFileSync(txtFileLocation, 'utf-8');
 6-Comentar el código
 */
 var Casino_1 = require("./Casino");
-var Person_1 = require("./Person");
+// import { Person } from "./Person";
 var SlotLuckyBoy_1 = require("./SlotLuckyBoy");
 var SlotLuckyMan_1 = require("./SlotLuckyMan");
 /* instantiated classes */
 // person
-var myself = new Person_1.Person("Ignacio", "González", 45877620, "04-08-2004");
+// let myself = new Person("Ignacio","González",45877620,"04-08-2004");
 // games
 var slotLuckyBoy = new SlotLuckyBoy_1.SlotLuckyBoy();
 var slotLuckyMan = new SlotLuckyMan_1.SlotLuckyMan();
