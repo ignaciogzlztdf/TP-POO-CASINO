@@ -2,9 +2,13 @@ import { Card } from "./Card";
 
 export class Blackjack {
   private cards:Card[];
+  private playerCards:Card[];
+  private dealerCards:Card[];
 
   constructor(){
     this.cards = [];
+    this.playerCards = [];
+    this.dealerCards = [];
   }
 
   private generateCards(){
@@ -30,14 +34,16 @@ export class Blackjack {
         inGameValueIndex++;
       }
     }
-    console.log(this.cards);
   }
-  private shuffleCards(){
-    
+  private shuffleTheCards(){
+    for (let i:number = 0; i < 100; i++){
+      this.cards.sort(() =>  Math.random() - 0.5 );
+    }
   }
   public play(){
-    // the cards are generated
+    // the 52 cards are generated
     this.generateCards();
-    this.shuffleCards();
+    // shuffle the cards several times
+    this.shuffleTheCards();
   }
 }
