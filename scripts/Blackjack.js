@@ -5,6 +5,8 @@ var Card_1 = require("./Card");
 var Blackjack = /** @class */ (function () {
     function Blackjack() {
         this.cards = [];
+        this.playerCards = [];
+        this.dealerCards = [];
     }
     Blackjack.prototype.generateCards = function () {
         // array with the 4 suits of the French-suited cards
@@ -30,11 +32,19 @@ var Blackjack = /** @class */ (function () {
                 inGameValueIndex++;
             }
         }
+    };
+    Blackjack.prototype.shuffleTheCards = function () {
+        for (var i = 0; i < 100; i++) {
+            this.cards.sort(function () { return Math.random() - 0.5; });
+        }
         console.log(this.cards);
+        console.log(this.cards.length);
     };
     Blackjack.prototype.play = function () {
-        // the cards are generated
+        // the 52 cards are generated
         this.generateCards();
+        // shuffle the cards several times
+        this.shuffleTheCards();
     };
     return Blackjack;
 }());
