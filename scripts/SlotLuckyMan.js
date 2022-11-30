@@ -22,15 +22,27 @@ var SlotLuckyMan = /** @class */ (function (_super) {
     function SlotLuckyMan() {
         return _super.call(this, "Lucky Man") || this;
     }
-    SlotLuckyMan.prototype.play = function () {
+    SlotLuckyMan.prototype.namePresentation = function () {
+        // the name of the game is displayed
+        console.log("\n" + "---> Slots - Lucky Man <---");
+    };
+    SlotLuckyMan.prototype.requestBet = function () {
         var bet = Number(this.rls.question("\n" + "Enter your bet: "));
+        if (!Number.isInteger(bet)) {
+            console.log("\n" + "You are only allowed to bet integer amounts.");
+            return this.requestBet();
+        }
         if (bet < 100 || bet > 1000) {
             console.log("\n" + "This game topic only allows to bet from 100 to 1000 usd. Try again.");
-            return this.play();
+            return this.requestBet();
         }
         else {
             this.bet = bet;
         }
+    };
+    SlotLuckyMan.prototype.play = function () {
+        this.namePresentation();
+        this.requestBet();
         this.generateNumbers();
         if (this.checkNumbers()) {
             this.userHaveWon();

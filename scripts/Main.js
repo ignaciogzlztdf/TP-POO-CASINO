@@ -84,6 +84,6 @@ var gameSlotLuckyBoy = new SlotLuckyBoy_1.SlotLuckyBoy();
 var gameSlotLuckyMan = new SlotLuckyMan_1.SlotLuckyMan();
 var gameBlackjack = new Blackjack_1.Blackjack();
 // casino
-var casinoElSanjuanino = new Casino_1.Casino("El Sanjuanino" /*,myself*/, gameSlotLuckyBoy, gameSlotLuckyMan);
-// casinoElSanjuanino.enter();
-gameBlackjack.play();
+var casinoElSanjuanino = new Casino_1.Casino("El Sanjuanino", gameSlotLuckyBoy, gameSlotLuckyMan, gameBlackjack);
+casinoElSanjuanino.enter();
+// gameBlackjack.play();

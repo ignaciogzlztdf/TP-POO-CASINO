@@ -1,17 +1,27 @@
 import { Card } from "./Card";
+import { ICasinoGame } from "./ICasinoGame";
+import { ReadlineSync } from "./ReadlineSync";
 
-export class Blackjack {
+export class Blackjack extends ReadlineSync implements ICasinoGame{
+  private bet:number;
   private cards:Card[];
   private playerCards:Card[];
   private dealerCards:Card[];
 
   constructor(){
+    super();
+    this.bet = 0;
     this.cards = [];
     this.playerCards = [];
     this.dealerCards = [];
   }
-
+  public namePresentation(): void {
+    // the name of the game is displayed
+    console.log("\n"+"---> Blackjack <---");
+  }
   private generateCards(){
+    /* the 52 cards are generated */
+
     // array with the 4 suits of the French-suited cards
     let suits:string[] = ["clubs", "diamonds","hearts", "spades"];
     // array with the 2 possible colors for the cards
@@ -36,14 +46,29 @@ export class Blackjack {
     }
   }
   private shuffleTheCards(){
+    // the cards are shuffled several times
     for (let i:number = 0; i < 100; i++){
       this.cards.sort(() =>  Math.random() - 0.5 );
     }
   }
+  public requestBet(){
+    // the bet is requested
+    let bet:number = Number(this.rls.question("\n"+"Enter your bet: "));
+    if (!Number.isInteger(bet)){
+      console.log("\n"+"You are only allowed to bet integer amounts.");
+      return this.requestBet();
+    }
+    if (bet <= 0 || bet > 10000){
+      console.log("\n"+"This game topic only allows you to bet up to 10000 usd. Try again.")
+      return this.requestBet();
+    } else {
+      this.bet = bet;
+    }
+  }
   public play(){
-    // the 52 cards are generated
+    this.namePresentation();
     this.generateCards();
-    // shuffle the cards several times
     this.shuffleTheCards();
+    this.requestBet();
   }
 }
