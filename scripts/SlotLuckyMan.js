@@ -27,6 +27,7 @@ var SlotLuckyMan = /** @class */ (function (_super) {
         console.log("\n" + "---> Slots - Lucky Man <---");
     };
     SlotLuckyMan.prototype.requestBet = function () {
+        // the bet is requested
         var bet = Number(this.rls.question("\n" + "Enter your bet: "));
         if (!Number.isInteger(bet)) {
             console.log("\n" + "You are only allowed to bet integer amounts.");

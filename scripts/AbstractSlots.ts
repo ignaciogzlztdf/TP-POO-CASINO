@@ -12,9 +12,6 @@ export abstract class AbstractSlots extends ReadlineSync {
     this.topic = paramTopic;
     this.bet = 0;
   }
-
-  abstract play():void;
-
   public getBet():number{
     return this.bet;
   }
