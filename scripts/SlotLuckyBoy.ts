@@ -10,7 +10,8 @@ export class SlotLuckyBoy extends AbstractSlots implements ICasinoGame {
     // the name of the game is displayed
     console.log("\n"+"---> Slots - Lucky Boy <---");
   }
-  public requestBet(){
+  public requestBet():void{
+    // the bet is requested
     let bet:number = Number(this.rls.question("\n"+"Enter your bet: "));
     if (!Number.isInteger(bet)){
       console.log("\n"+"You are only allowed to bet integer amounts.");
