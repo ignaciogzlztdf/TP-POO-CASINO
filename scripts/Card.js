@@ -36,13 +36,13 @@ var Card = /** @class */ (function () {
     Card.prototype.toString = function () {
         switch (this.suit) {
             case "clubs":
-                return "|" + this.rank + " - ♣| This card is: Rank [" + this.rank + "] - Type [" + this.color + " " + this.suit + "] - In-Game Value [" + this.inGameValue + "]";
+                return "[" + this.rank + " - ♣] This card is: Rank [" + this.rank + "] - Type [" + this.color + " " + this.suit + "] - In-Game Value [" + this.inGameValue + "]";
             case "diamonds":
-                return "|" + this.rank + " - ♦| This card is: Rank [" + this.rank + "] - Type [" + this.color + " " + this.suit + "] - In-Game Value [" + this.inGameValue + "]";
+                return "[" + this.rank + " - ♦] This card is: Rank [" + this.rank + "] - Type [" + this.color + " " + this.suit + "] - In-Game Value [" + this.inGameValue + "]";
             case "hearts":
-                return "|" + this.rank + " - ♥| This card is: Rank [" + this.rank + "] - Type [" + this.color + " " + this.suit + "] - In-Game Value [" + this.inGameValue + "]";
+                return "[" + this.rank + " - ♥] This card is: Rank [" + this.rank + "] - Type [" + this.color + " " + this.suit + "] - In-Game Value [" + this.inGameValue + "]";
             case "spades":
-                return "|" + this.rank + " - ♠| This card is: Rank [" + this.rank + "] - Type [" + this.color + " " + this.suit + "] - In-Game Value [" + this.inGameValue + "]";
+                return "[" + this.rank + " - ♠] This card is: Rank [" + this.rank + "] - Type [" + this.color + " " + this.suit + "] - In-Game Value [" + this.inGameValue + "]";
             default:
                 return "";
         }
